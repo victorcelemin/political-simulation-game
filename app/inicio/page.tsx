@@ -2,9 +2,12 @@
 
 import { useRouter } from "next/navigation"
 import { Crown } from "lucide-react"
+import { useState } from "react"
+import { StoryIntro } from "@/components/story-intro"
 
 export default function InicioPage() {
   const router = useRouter()
+  const [showIntro, setShowIntro] = useState(false)
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-retro-black relative overflow-hidden pixel-perfect">
@@ -48,13 +51,22 @@ export default function InicioPage() {
         </p>
 
         <div className="flex flex-col gap-4">
-          <button onClick={() => router.push("/partidas")} className="retro-btn w-full">
+          <button onClick={() => setShowIntro(true)} className="retro-btn w-full">
             NUEVA PARTIDA
           </button>
 
           <button onClick={() => router.push("/partidas")} className="retro-btn-secondary w-full">
             CARGAR PARTIDA
           </button>
+          
+          {showIntro && (
+            <StoryIntro 
+              onComplete={() => {
+                setShowIntro(false);
+                router.push("/partidas");
+              }}
+            />
+          )}
         </div>
 
         {/* Retro credits */}

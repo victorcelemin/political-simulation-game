@@ -1,0 +1,126 @@
+/* Scanlines effect */
+@keyframes scanlines {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(4px);
+  }
+}
+
+.bg-scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.1) 2px,
+    rgba(255, 255, 255, 0.1) 4px
+  );
+  animation: scanlines 6s linear infinite;
+}
+
+/* Story Intro specific styles */
+.story-intro {
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(4px);
+}
+
+.story-image {
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.story-text {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Progress indicator animation */
+.progress-dot {
+  transition: all 0.3s ease;
+}
+
+.progress-dot.active {
+  width: 1rem;
+  background-color: var(--retro-yellow);
+}
+
+/* Button hover effects */
+.story-button {
+  transition: all 0.3s ease;
+  border: 2px solid var(--retro-yellow);
+  background-color: transparent;
+  color: var(--retro-yellow);
+  padding: 0.5rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-button:hover {
+  background-color: var(--retro-yellow);
+  color: var(--retro-black);
+  transform: scale(1.05);
+}
+
+.story-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.story-button:hover:before {
+  left: 100%;
+}
+
+/* Image transitions */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms ease-out;
+}
+
+/* Text transitions */
+.text-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.text-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 500ms ease-out;
+}
+
+.text-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 500ms ease-in;
+}
