@@ -1,7 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import { ArrowLeft, BarChart3, TrendingUp } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 import { getSavedGames, type SavedGame } from "@/lib/game-storage"
 import { useEffect, useState } from "react"
 
@@ -77,44 +77,51 @@ export default function EstadisticasPage() {
           </button>
 
           <h1
-            className="text-2xl md:text-3xl font-bold text-retro-yellow"
-            style={{ fontFamily: "Press Start 2P, monospace", textShadow: "4px 4px 0 var(--retro-red)" }}
+            className="text-xl md:text-2xl font-bold text-retro-yellow text-center"
+            style={{ fontFamily: "Press Start 2P, monospace", textShadow: "3px 3px 0 var(--retro-red)" }}
           >
             ESTADÍSTICAS
           </h1>
 
-          <div className="w-32" />
+          <button
+            onClick={() => router.push("/inicio")}
+            className="retro-btn-secondary flex items-center gap-2 invisible"
+            style={{ fontSize: "0.6rem" }}
+          >
+            <ArrowLeft className="h-3 w-3" />
+            VOLVER
+          </button>
         </div>
 
         {stats ? (
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {/* Summary Stats */}
             <div
-              className="bg-retro-dark border-4 border-retro-yellow p-6"
-              style={{ boxShadow: "8px 8px 0 var(--retro-purple)" }}
+              className="bg-retro-dark border-4 border-retro-yellow p-4 md:p-6"
+              style={{ boxShadow: "6px 6px 0 var(--retro-purple)" }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <BarChart3 className="w-6 h-6 text-retro-yellow" />
+              <div className="flex items-center gap-2 md:gap-3 mb-4">
+                <div className="text-retro-yellow" style={{ fontSize: "1.2rem" }}>📊</div>
                 <h2
                   className="text-retro-yellow"
-                  style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.75rem" }}
+                  style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.6rem" }}
                 >
-                  RESUMEN GENERAL
+                  RESUMEN
                 </h2>
               </div>
 
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="bg-retro-dark border-2 border-retro-purple p-3">
-                  <p className="text-retro-light/70" style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.5rem" }}>
-                    PARTIDAS TOTALES
+                  <p className="text-retro-light/70 mb-2" style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.4rem" }}>
+                    TOTALES
                   </p>
-                  <p className="text-retro-yellow text-2xl font-bold">{stats.totalGames}</p>
+                  <p className="text-retro-yellow text-xl font-bold">{stats.totalGames}</p>
                 </div>
                 <div className="bg-retro-dark border-2 border-retro-purple p-3">
-                  <p className="text-retro-light/70" style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.5rem" }}>
-                    PARTIDAS COMPLETADAS
+                  <p className="text-retro-light/70 mb-2" style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.4rem" }}>
+                    COMPLETADAS
                   </p>
-                  <p className="text-retro-yellow text-2xl font-bold">{stats.completedGames}</p>
+                  <p className="text-retro-yellow text-xl font-bold">{stats.completedGames}</p>
                 </div>
               </div>
 
@@ -132,16 +139,16 @@ export default function EstadisticasPage() {
 
             {/* Average Stats */}
             <div
-              className="bg-retro-dark border-4 border-retro-yellow p-6"
-              style={{ boxShadow: "8px 8px 0 var(--retro-purple)" }}
+              className="bg-retro-dark border-4 border-retro-yellow p-4 md:p-6"
+              style={{ boxShadow: "6px 6px 0 var(--retro-purple)" }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <TrendingUp className="w-6 h-6 text-retro-yellow" />
+              <div className="flex items-center gap-2 md:gap-3 mb-4">
+                <div className="text-retro-yellow" style={{ fontSize: "1.2rem" }}>📈</div>
                 <h2
                   className="text-retro-yellow"
-                  style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.75rem" }}
+                  style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.6rem" }}
                 >
-                  PROMEDIO DE ESTADÍSTICAS
+                  PROMEDIO
                 </h2>
               </div>
 

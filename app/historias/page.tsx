@@ -1,7 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import { ArrowLeft, BookOpen } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 import { getSavedGames, type SavedGame } from "@/lib/game-storage"
 import { useEffect, useState } from "react"
 
@@ -47,18 +47,25 @@ export default function HistoriasPage() {
           </button>
 
           <h1
-            className="text-2xl md:text-3xl font-bold text-retro-yellow"
-            style={{ fontFamily: "Press Start 2P, monospace", textShadow: "4px 4px 0 var(--retro-red)" }}
+            className="text-xl md:text-2xl font-bold text-retro-yellow text-center"
+            style={{ fontFamily: "Press Start 2P, monospace", textShadow: "3px 3px 0 var(--retro-red)" }}
           >
             HISTORIAS
           </h1>
 
-          <div className="w-32" />
+          <button
+            onClick={() => router.push("/inicio")}
+            className="retro-btn-secondary flex items-center gap-2 invisible"
+            style={{ fontSize: "0.6rem" }}
+          >
+            <ArrowLeft className="h-3 w-3" />
+            VOLVER
+          </button>
         </div>
 
         {completedGames.length > 0 ? (
-          <div className="space-y-4">
-            {completedGames.map((game) => {
+          <div className="space-y-2 md:space-y-4">
+            {completedGames.map((game: SavedGame) => {
               const totalScore =
                 game.stats.derechos +
                 game.stats.economia +
@@ -69,8 +76,8 @@ export default function HistoriasPage() {
               return (
                 <div
                   key={game.id}
-                  className="bg-retro-dark border-2 border-retro-purple p-4 hover:border-retro-yellow transition-all"
-                  style={{ boxShadow: "4px 4px 0 var(--retro-purple)" }}
+                  className="bg-retro-dark border-2 border-retro-purple p-3 md:p-4 hover:border-retro-yellow transition-all"
+                  style={{ boxShadow: "3px 3px 0 var(--retro-purple)" }}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
@@ -168,8 +175,8 @@ export default function HistoriasPage() {
             className="bg-retro-dark border-4 border-retro-yellow p-8 text-center"
             style={{ boxShadow: "8px 8px 0 var(--retro-purple)" }}
           >
-            <div className="flex justify-center mb-4">
-              <BookOpen className="w-12 h-12 text-retro-yellow" />
+            <div className="flex justify-center mb-4" style={{ fontSize: "3rem" }}>
+              📚
             </div>
             <p
               className="text-retro-light mb-6"
