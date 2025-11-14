@@ -32,14 +32,15 @@ export default function EstadisticasPage() {
         popularidad: Math.round(games.reduce((sum, g) => sum + g.stats.popularidad, 0) / games.length),
       }
 
-      const bestGame = completedGames.sort(
+      const sortedGames = completedGames.sort(
         (a, b) =>
           (a.stats.derechos +
             a.stats.economia +
             a.stats.estabilidad +
             a.stats.popularidad) -
           (b.stats.derechos + b.stats.economia + b.stats.estabilidad + b.stats.popularidad)
-      )[0]
+      )
+      const bestGame = sortedGames[0]
 
       setStats({
         totalGames: games.length,
@@ -53,7 +54,7 @@ export default function EstadisticasPage() {
   return (
     <div className="min-h-screen bg-retro-black p-4 md:p-8 pixel-perfect relative overflow-hidden">
       {/* Scanlines effect */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
+      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ zIndex: 0 }}>
         <div
           className="absolute inset-0"
           style={{
@@ -64,7 +65,7 @@ export default function EstadisticasPage() {
         />
       </div>
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto relative z-20">
         <div className="flex items-center justify-between mb-8">
           <button
             onClick={() => router.push("/inicio")}

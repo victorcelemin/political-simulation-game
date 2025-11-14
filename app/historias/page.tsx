@@ -11,7 +11,8 @@ export default function HistoriasPage() {
   useEffect(() => {
     const games = getSavedGames()
     const finished = games.filter((g) => g.currentNode === "final")
-    setCompletedGames(finished.sort((a, b) => b.timestamp - a.timestamp))
+    const sorted = finished.sort((a, b) => b.timestamp - a.timestamp)
+    setCompletedGames(sorted)
   }, [])
 
   const getScoreColor = (total: number) => {
@@ -23,7 +24,7 @@ export default function HistoriasPage() {
   return (
     <div className="min-h-screen bg-retro-black p-4 md:p-8 pixel-perfect relative overflow-hidden">
       {/* Scanlines effect */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
+      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ zIndex: 0 }}>
         <div
           className="absolute inset-0"
           style={{
@@ -34,7 +35,7 @@ export default function HistoriasPage() {
         />
       </div>
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto relative z-20">
         <div className="flex items-center justify-between mb-8">
           <button
             onClick={() => router.push("/inicio")}

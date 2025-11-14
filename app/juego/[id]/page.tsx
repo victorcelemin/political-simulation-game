@@ -102,7 +102,7 @@ export default function JuegoPage() {
   }
 
   const replaceVariables = (text: string, state: SavedGame) => {
-    return text.replace(/{pais}/g, state.pais).replace(/{lider}/g, state.lider)
+    return text.replaceAll("{pais}", state.pais).replaceAll("{lider}", state.lider)
   }
 
   const evaluateFinalEnding = (state: SavedGame) => {
@@ -125,10 +125,10 @@ export default function JuegoPage() {
 
     try {
       const evalCondition = condition
-        .replace(/derechos/g, stats.derechos.toString())
-        .replace(/economia/g, stats.economia.toString())
-        .replace(/popularidad/g, stats.popularidad.toString())
-        .replace(/estabilidad/g, stats.estabilidad.toString())
+        .replaceAll("derechos", stats.derechos.toString())
+        .replaceAll("economia", stats.economia.toString())
+        .replaceAll("popularidad", stats.popularidad.toString())
+        .replaceAll("estabilidad", stats.estabilidad.toString())
 
       return eval(evalCondition)
     } catch {

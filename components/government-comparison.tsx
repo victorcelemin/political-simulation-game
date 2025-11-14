@@ -49,7 +49,12 @@ export default function GovernmentComparison({
   const playerScore = calculateScore(playerStats)
   const comparisons = presidents.map((president) => ({
     ...president,
-    score: calculateScore(president),
+    score: calculateScore({
+      derechos: president.derechos,
+      economia: president.economia,
+      estabilidad: president.estabilidad,
+      popularidad: president.popularidad,
+    }),
   }))
 
   const sortedComparisons = [...comparisons].sort((a, b) => b.score - a.score)
