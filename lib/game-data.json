@@ -106,28 +106,84 @@
     "choices": [
       {
         "text": "Aprobar reformas sociales que fortalezcan derechos laborales y civiles.",
-        "next": "evaluacion_final",
+        "next": "elecciones_2do_periodo",
         "effects": { "derechos": 5, "popularidad": 3, "economia": -1, "estabilidad": 1 }
       },
       {
         "text": "Aprobar reformas económicas de libre mercado.",
-        "next": "evaluacion_final",
+        "next": "elecciones_2do_periodo",
         "effects": { "derechos": -1, "popularidad": 2, "economia": 4, "estabilidad": 2 }
       },
       {
         "text": "Consolidar poder mediante una reforma constitucional.",
-        "next": "evaluacion_final",
+        "next": "elecciones_2do_periodo",
         "effects": { "derechos": -5, "popularidad": 1, "economia": 1, "estabilidad": 4 }
+      }
+    ]
+  },
+  "elecciones_2do_periodo": {
+    "id": "elecciones_2do_periodo",
+    "text": "Se acerca el final del primer período. Las elecciones para un posible segundo mandato generan tensión política. ¿Continuarás luchando por reelección?",
+    "background": "election_day.jpg",
+    "choices": [
+      {
+        "text": "Buscar la reelección presentando tu balance de gobierno.",
+        "next": "campana_reeleccion",
+        "effects": { "popularidad": 2, "derechos": 0, "economia": 0, "estabilidad": 1 }
+      },
+      {
+        "text": "Retirarse dignamente sin buscar la reelección.",
+        "next": "evaluacion_final",
+        "effects": { "popularidad": 4, "derechos": 2, "economia": 0, "estabilidad": 3 }
+      },
+      {
+        "text": "Intentar modificar la constitución para permitir reelección indefinida.",
+        "next": "evaluacion_final",
+        "effects": { "derechos": -6, "popularidad": -3, "estabilidad": -2, "economia": -1 }
+      }
+    ]
+  },
+  "campana_reeleccion": {
+    "id": "campana_reeleccion",
+    "text": "Tu campaña se intensifica. Los ciudadanos revisan tu record: ¿qué balance has dejado en {pais}?",
+    "background": "rally_night.jpg",
+    "choices": [
+      {
+        "text": "Enfatizar logros en derechos y justicia social.",
+        "next": "resultados_reeleccion",
+        "effects": { "derechos": 3, "popularidad": 4, "economia": -1, "estabilidad": 1 }
+      },
+      {
+        "text": "Enfatizar logros económicos y orden público.",
+        "next": "resultados_reeleccion",
+        "effects": { "derechos": -2, "economia": 3, "popularidad": 3, "estabilidad": 2 }
+      },
+      {
+        "text": "Prometer continuidad sin cambios significativos.",
+        "next": "resultados_reeleccion",
+        "effects": { "popularidad": 1, "derechos": 0, "economia": 0, "estabilidad": 2 }
+      }
+    ]
+  },
+  "resultados_reeleccion": {
+    "id": "resultados_reeleccion",
+    "text": "Los resultados electorales llegan. La nación ha decidido si {lider} continuará en el poder o si es momento de un nuevo liderazgo.",
+    "background": "parliament_day.jpg",
+    "choices": [
+      {
+        "text": "Ver resultado final",
+        "next": "evaluacion_final",
+        "effects": { "popularidad": 0, "derechos": 0, "economia": 0, "estabilidad": 0 }
       }
     ]
   },
   "evaluacion_final": {
     "id": "evaluacion_final",
-    "text": "Han pasado cuatro años de gobierno. La nación observa los resultados de las decisiones de {lider}.",
+    "text": "Han pasado cuatro años de gobierno. La nación observa los resultados de las decisiones de {lider}. Los historiadores ya comparan tu legado con los presidentes más influyentes de Colombia.",
     "background": "palace_dawn.jpg",
     "choices": [
       {
-        "text": "Evaluar resultado final",
+        "text": "Ver resultado final y comparación histórica",
         "next": "final",
         "effects": { "derechos": 0, "popularidad": 0, "economia": 0, "estabilidad": 0 }
       }
@@ -163,6 +219,55 @@
         "result": "El mandato termina en un equilibrio precario. {pais} sobrevive, pero sin grandes logros ni tragedias. {lider} deja el poder sin gloria ni infamia.",
         "background": "palace_neutral.jpg"
       }
-    ]
+    ],
+    "colombianComparison": {
+      "presidents": [
+        {
+          "name": "Álvaro Uribe Vélez",
+          "years": "2002-2010",
+          "derechos": -3,
+          "economia": 4,
+          "estabilidad": 5,
+          "popularidad": 6,
+          "description": "Conocido por la política de 'Seguridad Democrática'. Aumentó la estabilidad pero con críticas sobre derechos humanos."
+        },
+        {
+          "name": "Juan Manuel Santos",
+          "years": "2010-2018",
+          "derechos": 4,
+          "economia": 2,
+          "estabilidad": 3,
+          "popularidad": 4,
+          "description": "Alcanzó un acuerdo de paz histórico con las FARC. Buscó equilibrio entre paz y desarrollo económico."
+        },
+        {
+          "name": "Iván Duque",
+          "years": "2018-2022",
+          "derechos": 1,
+          "economia": 1,
+          "estabilidad": 2,
+          "popularidad": 2,
+          "description": "Continuó políticas de seguridad. Enfrentó pandemia y crisis económica durante su mandato."
+        },
+        {
+          "name": "Gustavo Petro",
+          "years": "2022-presente",
+          "derechos": 3,
+          "economia": -1,
+          "estabilidad": -1,
+          "popularidad": 3,
+          "description": "Primer presidente de izquierda. Enfocado en reformas sociales y cambio climático. Iniciativas polémicas generaron polarización."
+        },
+        {
+          "name": "Andrés Pastrana",
+          "years": "1998-2002",
+          "derechos": 1,
+          "economia": -2,
+          "estabilidad": 1,
+          "popularidad": 2,
+          "description": "Intentó diálogo con guerrilla mediante Zona de Distensión. Enfrentó crisis económica severa."
+        }
+      ]
+    }
   }
 }

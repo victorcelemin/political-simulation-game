@@ -45,6 +45,9 @@ export default function PartidasPage() {
       "medios",
       "crisis_social",
       "reformas",
+      "elecciones_2do_periodo",
+      "campana_reeleccion",
+      "resultados_reeleccion",
       "evaluacion_final",
       "final",
     ]

@@ -58,6 +58,14 @@ export default function InicioPage() {
           <button onClick={() => router.push("/partidas")} className="retro-btn-secondary w-full">
             CARGAR PARTIDA
           </button>
+
+          <button onClick={() => router.push("/historias")} className="retro-btn-secondary w-full">
+            HISTORIAS
+          </button>
+
+          <button onClick={() => router.push("/estadisticas")} className="retro-btn-secondary w-full">
+            ESTADÍSTICAS
+          </button>
           
           {showIntro && (
             <StoryIntro 

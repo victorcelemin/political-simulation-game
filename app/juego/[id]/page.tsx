@@ -6,6 +6,7 @@ import { ArrowLeft, Settings, X, ImageOff } from "lucide-react"
 import { getSavedGame, saveGame, type SavedGame } from "@/lib/game-storage"
 import gameData from "@/lib/game-data.json"
 import StatsBar from "@/components/stats-bar"
+import GovernmentComparison from "@/components/government-comparison"
 
 type GameNode = {
   id: string
@@ -216,7 +217,14 @@ export default function JuegoPage() {
             >
               {endingText}
             </p>
-            <button onClick={handleRestart} className="retro-btn">
+            {gameState && (gameData as any).final?.colombianComparison && (
+              <GovernmentComparison
+                playerStats={gameState.stats}
+                presidents={(gameData as any).final.colombianComparison.presidents}
+                lider={gameState.lider}
+              />
+            )}
+            <button onClick={handleRestart} className="retro-btn mt-6">
               VOLVER AL MENU
             </button>
           </div>
@@ -270,7 +278,14 @@ export default function JuegoPage() {
           >
             {endingText}
           </p>
-          <button onClick={handleRestart} className="retro-btn">
+          {gameState && (gameData as any).final?.colombianComparison && (
+            <GovernmentComparison
+              playerStats={gameState.stats}
+              presidents={(gameData as any).final.colombianComparison.presidents}
+              lider={gameState.lider}
+            />
+          )}
+          <button onClick={handleRestart} className="retro-btn mt-6">
             VOLVER AL MENU
           </button>
         </div>
