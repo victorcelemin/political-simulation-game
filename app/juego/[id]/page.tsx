@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { useParams, useRouter, useSearchParams } from "next/navigation"
-import { ArrowLeft, Settings, X, ImageOff } from "lucide-react"
 import { getSavedGame, saveGame, type SavedGame } from "@/lib/game-storage"
 import gameData from "@/lib/game-data.json"
 import StatsBar from "@/components/stats-bar"

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
-import { Trash2, Play, Plus, ArrowLeft } from "lucide-react"
 import { getSavedGames, deleteSavedGame, type SavedGame } from "@/lib/game-storage"
 
 export default function PartidasPage() {
@@ -76,8 +75,7 @@ export default function PartidasPage() {
             className="retro-btn-secondary flex items-center gap-2"
             style={{ fontSize: "0.6rem" }}
           >
-            <ArrowLeft className="h-3 w-3" />
-            VOLVER
+            ← VOLVER
           </button>
 
           <h1

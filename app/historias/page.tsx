@@ -1,7 +1,6 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import { ArrowLeft } from "lucide-react"
 import { getSavedGames, type SavedGame } from "@/lib/game-storage"
 import { useEffect, useState } from "react"
 
@@ -42,8 +41,7 @@ export default function HistoriasPage() {
             className="retro-btn-secondary flex items-center gap-2"
             style={{ fontSize: "0.6rem" }}
           >
-            <ArrowLeft className="h-3 w-3" />
-            VOLVER
+            ← VOLVER
           </button>
 
           <h1
@@ -58,8 +56,7 @@ export default function HistoriasPage() {
             className="retro-btn-secondary flex items-center gap-2 invisible"
             style={{ fontSize: "0.6rem" }}
           >
-            <ArrowLeft className="h-3 w-3" />
-            VOLVER
+            ← VOLVER
           </button>
         </div>
 
@@ -199,8 +196,7 @@ export default function HistoriasPage() {
           className="retro-btn-secondary w-full mt-6 flex items-center justify-center gap-2"
           style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.65rem" }}
         >
-          <ArrowLeft className="h-3 w-3" />
-          VOLVER AL MENU
+          ← VOLVER AL MENU
         </button>
       </div>
     </div>

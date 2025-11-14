@@ -57,10 +57,10 @@ export default function GovernmentComparison({
   return (
     <div className="comparison-container mt-8 pt-8 border-t-4 border-retro-yellow">
       <h3
-        className="text-retro-yellow mb-6"
+        className="text-retro-yellow mb-6 text-center"
         style={{
           fontFamily: "Press Start 2P, monospace",
-          fontSize: "0.75rem",
+          fontSize: "1rem",
           textShadow: "2px 2px 0 var(--retro-red)",
         }}
       >
@@ -74,7 +74,7 @@ export default function GovernmentComparison({
       >
         <p
           className="text-retro-yellow mb-4"
-          style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.6rem" }}
+          style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.8rem" }}
         >
           {lider.toUpperCase()}
         </p>
@@ -82,7 +82,7 @@ export default function GovernmentComparison({
         <div className="space-y-3 text-sm">
           <div>
             <div className="flex justify-between mb-1">
-              <span className="text-retro-light" style={{ fontSize: "0.5rem" }}>
+              <span className="text-retro-light" style={{ fontSize: "0.65rem" }}>
                 DERECHOS: {playerStats.derechos > 0 ? "+" : ""}
                 {playerStats.derechos}
               </span>
@@ -99,7 +99,7 @@ export default function GovernmentComparison({
 
           <div>
             <div className="flex justify-between mb-1">
-              <span className="text-retro-light" style={{ fontSize: "0.5rem" }}>
+              <span className="text-retro-light" style={{ fontSize: "0.65rem" }}>
                 ECONOMÍA: {playerStats.economia > 0 ? "+" : ""}
                 {playerStats.economia}
               </span>
@@ -116,7 +116,7 @@ export default function GovernmentComparison({
 
           <div>
             <div className="flex justify-between mb-1">
-              <span className="text-retro-light" style={{ fontSize: "0.5rem" }}>
+              <span className="text-retro-light" style={{ fontSize: "0.65rem" }}>
                 ESTABILIDAD: {playerStats.estabilidad > 0 ? "+" : ""}
                 {playerStats.estabilidad}
               </span>
@@ -133,7 +133,7 @@ export default function GovernmentComparison({
 
           <div>
             <div className="flex justify-between mb-1">
-              <span className="text-retro-light" style={{ fontSize: "0.5rem" }}>
+              <span className="text-retro-light" style={{ fontSize: "0.65rem" }}>
                 POPULARIDAD: {playerStats.popularidad > 0 ? "+" : ""}
                 {playerStats.popularidad}
               </span>
@@ -150,10 +150,10 @@ export default function GovernmentComparison({
 
           <div className="pt-2 border-t border-retro-purple">
             <div className="flex justify-between items-center">
-              <span className="text-retro-purple font-bold" style={{ fontSize: "0.6rem" }}>
+              <span className="text-retro-purple font-bold" style={{ fontSize: "0.75rem" }}>
                 PUNTUACIÓN TOTAL:
               </span>
-              <span className="text-retro-yellow font-bold" style={{ fontSize: "0.7rem" }}>
+              <span className="text-retro-yellow font-bold" style={{ fontSize: "0.85rem" }}>
                 {playerScore}/25
               </span>
             </div>
@@ -165,7 +165,7 @@ export default function GovernmentComparison({
       <div className="mb-6">
         <p
           className="text-retro-light mb-3"
-          style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.55rem" }}
+          style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.75rem" }}
         >
           RANKING HISTÓRICO
         </p>
@@ -182,19 +182,19 @@ export default function GovernmentComparison({
                 <div className="flex-1">
                   <p
                     className="text-retro-light"
-                    style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.55rem" }}
+                    style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.7rem" }}
                   >
                     #{index + 1}. {president.name} ({president.years})
                   </p>
                   <p
                     className="text-retro-light/70 mt-1"
-                    style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.4rem", lineHeight: "1.4" }}
+                    style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.5rem", lineHeight: "1.4" }}
                   >
                     {president.description}
                   </p>
                 </div>
                 <div className="text-right ml-4">
-                  <p className="text-retro-yellow font-bold" style={{ fontSize: "0.6rem" }}>
+                  <p className="text-retro-yellow font-bold" style={{ fontSize: "0.75rem" }}>
                     {president.score}/25
                   </p>
                 </div>
