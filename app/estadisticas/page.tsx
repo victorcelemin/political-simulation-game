@@ -52,11 +52,11 @@ export default function EstadisticasPage() {
   }, [])
 
   return (
-    <div className="bg-retro-black p-4 md:p-8 pixel-perfect relative min-h-screen">
-      {/* Scanlines effect */}
+    <div className="bg-retro-black p-4 md:p-8 pixel-perfect relative">
+      {/* Scanlines effect - fixed background */}
       <div className="fixed inset-0 opacity-10 pointer-events-none" style={{ zIndex: 0 }}>
         <div
-          className="absolute inset-0"
+          className="w-full h-full"
           style={{
             background:
               "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.1) 2px, rgba(255,255,255,0.1) 4px)",
@@ -64,6 +64,8 @@ export default function EstadisticasPage() {
           }}
         />
       </div>
+      {/* Ensure full height background */}
+      <div className="fixed inset-0 bg-retro-black" style={{ zIndex: -1 }} />
 
       <div className="max-w-4xl mx-auto relative z-20">
         <div className="flex items-center justify-between mb-8">
