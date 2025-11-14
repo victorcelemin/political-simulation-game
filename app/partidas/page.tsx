@@ -256,8 +256,7 @@ export default function PartidasPage() {
                       onClick={() => router.push(`/juego/${game.id}`)}
                       className="retro-btn flex-1 flex items-center justify-center gap-2"
                     >
-                      <Play className="h-3 w-3" />
-                      CONTINUAR
+                      ▶️ CONTINUAR
                     </button>
                     <button
                       onClick={() => handleDeleteGame(game.id)}
@@ -268,7 +267,7 @@ export default function PartidasPage() {
                         boxShadow: "6px 6px 0 var(--retro-dark)",
                       }}
                     >
-                      <Trash2 className="h-3 w-3" />
+                      🗑️
                     </button>
                   </div>
                 </div>

@@ -199,7 +199,7 @@ export default function JuegoPage() {
                 }}
               >
                 <div className="text-center">
-                  <ImageOff className="h-12 w-12 text-retro-purple mx-auto mb-2" />
+                  <div style={{ fontSize: "3rem", marginBottom: "0.5rem" }}>🖼️</div>
                   <p
                     className="text-retro-light"
                     style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.5rem" }}
@@ -263,7 +263,7 @@ export default function JuegoPage() {
               }}
             >
               <div className="text-center">
-                <ImageOff className="h-12 w-12 text-retro-purple mx-auto mb-2" />
+                <div style={{ fontSize: "3rem", marginBottom: "0.5rem" }}>🖼️</div>
                 <p className="text-retro-light" style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.5rem" }}>
                   NO IMAGE
                 </p>
@@ -320,7 +320,7 @@ export default function JuegoPage() {
               className={`node-image transition-opacity duration-600 ${isTransitioning ? "opacity-0" : "opacity-100"} flex items-center justify-center bg-retro-dark`}
             >
               <div className="text-center">
-                <ImageOff className="h-16 w-16 text-retro-purple mx-auto mb-3" />
+                <div style={{ fontSize: "4rem", marginBottom: "0.75rem" }}>🖼️</div>
                 <p className="text-retro-light" style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.6rem" }}>
                   NO IMAGE
                 </p>
@@ -366,8 +366,7 @@ export default function JuegoPage() {
               className="bg-retro-dark/90 text-retro-white border-2 border-retro-purple px-3 py-2 hover:bg-retro-purple transition-all flex items-center gap-2"
               style={{ fontFamily: "Press Start 2P, monospace", fontSize: "0.5rem" }}
             >
-              <Settings className="h-3 w-3" />
-              OPCIONES
+              ⚙️ OPCIONES
             </button>
           </div>
 
@@ -385,7 +384,7 @@ export default function JuegoPage() {
                     OPCIONES
                   </h2>
                   <button onClick={() => setShowOptions(false)} className="text-retro-white hover:text-retro-red">
-                    <X className="h-5 w-5" />
+                    ✕
                   </button>
                 </div>
                 <div className="space-y-4 mb-6">
