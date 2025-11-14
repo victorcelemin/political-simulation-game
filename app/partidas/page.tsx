@@ -27,9 +27,9 @@ export default function PartidasPage() {
   }
 
   const handleNewGame = () => {
-    if (pais.trim() && lider.trim()) {
+      if (pais.trim() && lider.trim()) {
       const gameId = Date.now().toString()
-      router.push(`/juego/${gameId}?pais=${encodeURIComponent(pais)}&lider=${encodeURIComponent(lider)}`)
+      router.push(`/juego?id=${gameId}&pais=${encodeURIComponent(pais)}&lider=${encodeURIComponent(lider)}`)
       setIsNewGameOpen(false)
       setPais("")
       setLider("")
@@ -253,7 +253,7 @@ export default function PartidasPage() {
                   {/* Action Buttons */}
                   <div className="flex gap-3">
                     <button
-                      onClick={() => router.push(`/juego/${game.id}`)}
+                      onClick={() => router.push(`/juego?id=${game.id}`)}
                       className="retro-btn flex-1 flex items-center justify-center gap-2"
                     >
                       ▶️ CONTINUAR
