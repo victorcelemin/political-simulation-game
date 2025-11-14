@@ -94,8 +94,7 @@ export default function PartidasPage() {
             onClick={() => setIsNewGameOpen(true)}
             className="retro-btn w-full mb-6 flex items-center justify-center gap-3"
           >
-            <Plus className="h-4 w-4" />
-            NUEVA PARTIDA
+            ➕ NUEVA PARTIDA
           </button>
         ) : (
           <div
