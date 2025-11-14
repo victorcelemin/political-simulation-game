@@ -22,9 +22,9 @@ export default function HistoriasPage() {
   }
 
   return (
-    <div className="min-h-screen bg-retro-black p-4 md:p-8 pixel-perfect relative overflow-hidden">
+    <div className="bg-retro-black p-4 md:p-8 pixel-perfect relative min-h-screen">
       {/* Scanlines effect */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ zIndex: 0 }}>
+      <div className="fixed inset-0 opacity-10 pointer-events-none" style={{ zIndex: 0 }}>
         <div
           className="absolute inset-0"
           style={{
